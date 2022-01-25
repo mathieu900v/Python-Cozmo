@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h2>Connectez vous au site !</h2>
+      <p>Si vous n'avez pas de compte,
+        <a href="{% url 'website_cozmo:inscription_page' %}">
+          inscrivez-vous !
+        </a>
+
+      </p>
+
+      <form method="POST" action="{% url 'website_cozmo:home' %}">  
+        {% csrf_token %}
+        <label>Nom d'utilisateur</label><br/>
+        <input type="text" name="username" placeholder="Entrez le nom d'utilisateur" required="required"> <br/><br/>
+       
+        <label>Mot de passe</label> <br/>
+        <input type="password" name="password" placeholder="Entrez le mot de passe" required="required"> <br/><br/>
+        <input type="submit">
+      </form>
+
+    </div>
+    <label> <span style="color: red;">{{ msg }}</span></label>
+
+  </body>
+</html>

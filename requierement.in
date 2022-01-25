@@ -1,0 +1,9 @@
+asgiref==3.4.1
+backports.zoneinfo==0.2.1
+cozmo==1.4.10
+cozmoclad==3.4.0
+Django==4.0
+numpy==1.21.5
+Pillow==8.4.0
+sqlparse==0.4.2
+

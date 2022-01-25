@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body style="background-color: #ECEFF1;">
+    
+      <h1 style="text-align: center;">
+        Bonjour {{user.firstname}}
+      </h1>
+     
+    <div style="flex:1; flex-direction:column">
+      <div style="flex: 1; flex-direction: row;">
+
+
+        <div style="margin-left: 100PX; margin-right: 200px; flex: 1; background-color: #BBDEFB; border-radius: 20px;">
+          <p style="font-size:large; font-weight: bold; margin-left: 10px; padding-top: 10px;">Jouer</p>
+          <div style="text-align: center;">
+            <p>Jouer.</p>
+              <a href="{% url 'website_cozmo:game' %}">
+              <button style="border-radius: 10px; background-color: #F5F5F5;">Jouer</button>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-left: 100PX; margin-right: 200px; flex: 1; background-color: #BBDEFB; border-radius: 20px;">
+          <p style="font-size:large; font-weight: bold; margin-left: 10px; padding-top: 10px;"> MODE Administrateur</p>
+          <div style="text-align: center;">
+            <p>Entrer dans le mode administrateur.</p>
+            <a href="{% url 'website_cozmo:game' %}">
+              <button style="border-radius: 10px; background-color: #F5F5F5;">Administrateur</button>
+            </a>
+            </div>
+        </div>
+  
+       
+      
+        <div style="margin-left: 100PX; margin-right: 200px; flex: 1; background-color: #BBDEFB; border-radius: 20px;">
+          <p style="font-size:large; font-weight: bold; margin-left: 10px; padding-top: 10px;">MODE Histoire</p>
+          <div style="text-align: center;">
+            <p>Entrer dans le mode histoire.</p>
+            <a href="{% url 'website_cozmo:histoire' %}">
+              <button style="border-radius: 10px; background-color: #F5F5F5;">Histoire</button>
+            </a>
+            </div>
+        </div>
+
+        <div style="margin-left: 100PX; margin-right: 200px; flex: 1; background-color: #BBDEFB; border-radius: 20px;">
+          <p style="font-size:large; font-weight: bold; margin-left: 10px; padding-top: 10px;">MODE code libre</p>
+          <div style="text-align: center;">
+            <p>coder votre propre jeu facilement.</p>
+            <a href="{% url 'website_cozmo:libre' %}">
+              <button style="border-radius: 10px; background-color: #F5F5F5;">Coder</button>
+            </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <a href="{% url 'website_cozmo:signout' %}">
+      <button>
+        Déconnexion
+      </button>
+    </a>
+  </body>
+</html>
+

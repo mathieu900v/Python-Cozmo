@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Histoire</title>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h2>Histoire</h2>
+    </div>
+    <div style="display: flex;flex-direction: row; justify-content: start;">
+      <div>
+        <form method="POST" action="{% url 'website_cozmo:createprogram' %}">  
+          {% csrf_token %}
+          <textarea id="editor" name="content" style="width:50vw;height: 90vh;"></textarea>
+          <button type="submit">RUN</button>
+        </form>
+        <div>
+          <p style="text-decoration: underline;">Voici la sortie console</p>
+          {% if log %}
+          <p style="color: red;">
+            {{log}} 
+          </p>
+          {% endif %}
+        </div>
+      </div>
+      <div >
+        <div style="margin: 50px; border-style: solid;"> <!--Histoire -->
+          <div style="margin-left: 50px;">
+            <h3 style="text-align: center;">Intitulé de l'histoire</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Vivamus nec nulla pellentesque, fermentum nibh a, sagittis mi.
+               Etiam erat libero, finibus eu massa eu, volutpat aliquet nisi.
+                Integer vitae pretium libero. Integer commodo efficitur congue.
+                 Aliquam vulputate pulvinar mauris vel aliquet. Mauris vel urna massa.
+                  Mauris eu porttitor lorem.
+                   Vestibulum faucibus orci eu dolor iaculis suscipit.</p>
+            </div>    
+        </div>
+        <div>
+          <div style="margin: 50px;border-style: solid;"> <!--Exercice -->
+            <div style="margin-left: 50px;">
+              <h3 style="text-align: center;">Intitulé de l'exercice</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vivamus nec nulla pellentesque, fermentum nibh a, sagittis mi.
+                 Etiam erat libero, finibus eu massa eu, volutpat aliquet nisi.
+                  Integer vitae pretium libero. Integer commodo efficitur congue.
+                   Aliquam vulputate pulvinar mauris vel aliquet. Mauris vel urna massa.
+                    Mauris eu porttitor lorem.
+                     Vestibulum faucibus orci eu dolor iaculis suscipit.</p>
+            </div>
+           
+          </div>
+        </div>
+
+      </div>  
+    </div>
+  
+  </body>
+</html>

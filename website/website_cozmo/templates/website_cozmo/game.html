@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jeu</title>
+  </head>
+  <body style="background-color: #ECEFF1;">
+    
+      <h1 style="text-align: center;">
+        Voici les jeux disponible
+      </h1>
+     
+
+    {% for game in games %}
+
+    <div style="flex:1; flex-direction:column">
+      <div style="flex: 1; flex-direction: row;">
+        <div style="margin-left: 100px; margin-right: 200px; flex: 1; background-color: #BBDEFB; border-radius: 20px;">
+            <p style="font-size:large; font-weight: bold; margin-left: 10px; text-align: center;"> {{ game.title }}</p>
+            <div style="text-align: center;">
+              <p>{{ game.description }}</p>
+              <p>Cliques sur l'image pour lancer le jeu.</p>
+
+            </div>
+            <div style="text-align: center;">
+
+              <form method="POST" action="{% url 'website_cozmo:game' %}">  
+                {% csrf_token %}
+                <input value="{{game.file}}" name="file" hidden/>
+                <button type="submit">
+                  <img src="https://img.nrj.fr/-Cip8r2hsGv13diYfNIhJ183Lvo=/0x177/smart/http%3A%2F%2Fimage-api.nrj.fr%2Fmedias%2Fnrjgames%2F2017%2F09%2Fanki-cozmo-test.jpeg" />
+                </button>
+              </form>
+
+            </div>
+        </div>
+
+      {% endfor %}
+
+      </div>
+    </div>
+
+    </body>
+</html>
+
